@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Удаление задачи{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1>Удаление задачи</h1>
+    <form method="post">
+        {% csrf_token %}
+        <br>
+        <br>
+        <br>
+
+        <h3>Вы уверены, что хотите удалить задачу?</h3>
+        <br>
+        <br>
+        <button class="btn btn-danger" type="submit">Удалить задачу</button>
+    </form>
+</div>
+
+{% endblock %}

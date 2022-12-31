@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Список оборудования{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1>Список оборудования</h1>
+</div>
+
+<div class="features">
+    <a href="{% url 'create_equipment' %}">
+        <li>
+            <button>
+                <img src="{% static 'equipment/img/add.png' %}" alt="add" width="30" height="30">
+                <span class="create">  Добавить оборудование</span>
+            </button>
+        </li>
+    </a>
+</div>
+
+    <div class="plans">
+        {% if equipment %}
+            {% for el in equipment %}
+                <div class="alert alert-info ">
+                    <h3>{{ el.title }}</h3>
+                    <h5>{{ el.body }}</h5>
+                    <p>Дедлайн: {{ el.time }}</p>
+                    <a href="{% url 'equipments-detail' el.id %}" class="btn btn-info">
+                        Перейти к информации об оборудовании</a>
+                    <a href="{% url 'equipments-update' el.id %}" class="btn btn-info">
+                        Редактировать информацию об оборудовании</a>
+                    <a href="{% url 'equipments-delete' el.id %}" class="btn btn-info"> Удалить оборудование</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h3>У вас нет оборудования</h3>
+    </div>
+        {% endif %}
+
+{% endblock %}

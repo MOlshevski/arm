@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Добавить оборудование{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1>Добавить оборудование</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p></p>
+        {{ form.title }}
+        <p></p>
+        {{ form.body }}
+        <p></p>
+        {{ form.time }}
+        <p></p>
+        <span>{{ error }}</span>
+        <button class="btn btn-info" type="submit">Добавить оборудование</button>
+    </form>
+</div>
+
+{% endblock %}

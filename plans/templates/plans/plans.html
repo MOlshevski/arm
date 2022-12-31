@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Список задач{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1>Список Задач</h1>
+</div>
+
+<div class="features">
+    <a href="{% url 'create_plan' %}">
+        <li>
+            <button>
+                <img src="{% static 'plans/img/add.png' %}" alt="add" width="30" height="30">
+                <span class="create">  Создать задачу</span>
+            </button>
+        </li>
+    </a>
+</div>
+
+    <div class="plans">
+        {% if plans %}
+            {% for el in plans %}
+                <div class="alert alert-info ">
+                    <h3>{{ el.title }}</h3>
+                    <h5>{{ el.body }}</h5>
+                    <p>Дедлайн: {{ el.time }}</p>
+                    <a href="{% url 'plans-detail' el.id %}" class="btn btn-info"> Перейти к задаче</a>
+                    <a href="{% url 'plans-update' el.id %}" class="btn btn-info"> Редактировать задачу</a>
+                    <a href="{% url 'plans-delete' el.id %}" class="btn btn-info"> Удалить задачу</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h3>У вас нет планов на сегодня</h3>
+    </div>
+        {% endif %}
+
+{% endblock %}
