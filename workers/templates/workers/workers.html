@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Список работников{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1>Список работников</h1>
+</div>
+
+<div class="features">
+    <a href="{% url 'create_worker' %}">
+        <li>
+            <button>
+                <img src="{% static 'workers/img/add.png' %}" alt="add" width="30" height="30">
+                <span class="create"> Добавить работника</span>
+            </button>
+        </li>
+    </a>
+</div>
+    <div class="plans">
+        {% if workers %}
+            {% for el in workers %}
+                <div class="alert alert-info ">
+                    <h2>Ф.И.О: {{ el.surname }} {{ el.firstname }} {{ el.midname }}</h2>
+                    <h5>Профессия: {{ el.profession }}</h5>
+                    <h5>Структурное подразделение: {{ el.division }}</h5>
+                    <a href="{% url 'workers-detail' el.id %}" class="btn btn-info">
+                        Перейти к работнику</a>
+                    <a href="{% url 'workers-update' el.id %}" class="btn btn-info">
+                        Редактировать информацию</a>
+                    <a href="{% url 'workers-delete' el.id %}" class="btn btn-info">
+                        Удалить работника</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h3>У вас нет работников</h3>
+    </div>
+        {% endif %}
+
+{% endblock %}
+
+

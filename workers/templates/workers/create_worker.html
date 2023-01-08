@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Добавить работника{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1>Добавить работника</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p></p>
+            <h2>{{ form.surname }}</h2>
+        <p></p>
+            <h2>{{ form.firstname }}</h2>
+        <p></p>
+            <h2>{{ form.midname }}</h2>
+        <p></p>
+            <h5>{{ form.profession }}</h5>
+        <p></p>
+            <h5>{{ form.division }}</h5>
+        <p></p>
+            <h7>{{ form.adress }}</h7>
+        <p></p>
+            <h7>{{ form.bday }}</h7>
+
+        <span>{{ error }}</span>
+        <button class="btn btn-info" type="submit">Добавить работника</button>
+    </form>
+</div>
+
+{% endblock %}

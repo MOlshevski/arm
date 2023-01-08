@@ -10,6 +10,7 @@ urlpatterns = [
     path('', include('main.urls')),
     path('plans/', include('plans.urls')),
     path('equipment/', include('equipment.urls')),
+    path('workers/', include('workers.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # handler404 = pageNotFound

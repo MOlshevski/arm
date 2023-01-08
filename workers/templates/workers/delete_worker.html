@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Удаление работника{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1>Удаление работника</h1>
+    <form method="post">
+        {% csrf_token %}
+        <br>
+        <br>
+        <br>
+
+        <h3>Вы уверены, что хотите удалить работника?</h3>
+        <br>
+        <br>
+        <button class="btn btn-danger" type="submit">Удалить работника</button>
+    </form>
+</div>
+
+{% endblock %}

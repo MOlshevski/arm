@@ -34,7 +34,7 @@ main .features {
     width: 80%;
 }
 
-button ul {list-style:none}
+button ul,li {list-style: none}
 button {
     background-color: #24aad7;
     color: #000000;

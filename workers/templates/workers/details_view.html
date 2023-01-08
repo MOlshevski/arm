@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}{{ worker.surname }}{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h2>Ф.И.О: {{ worker.surname }} {{ worker.firstname }} {{ worker.midname }}</h2>
+    <h5>Профессия: {{ worker.profession }}</h5>
+    <h5>Структурное подразделение: {{ worker.division }}</h5>
+    <h7>Адресс: {{ worker.adress }}</h7>
+    <br>
+    <h7>Дата рождения: {{ worker.bday }}</h7>
+</div>
+
+{% endblock %}
