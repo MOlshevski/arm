@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %} Выход из аккаунта {% endblock %}
+
+{% block content %}
+
+<h1>Вы вышли из своей учетной записи</h1>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'login' %}">Войти</a>
+        </small>
+    </div>
+{% endblock content %}

@@ -21,8 +21,32 @@
             <a href="{% url 'equipment' %}"><li><i class="bi bi-hammer"></i> Оборудование</li></a>
             <a href="{% url 'plans' %}"><li><i class="bi bi-clipboard-check-fill"></i> Список задач</li></a>
         </ul>
+
+        <div class="features">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <a href="{% url 'register' %}" class="btn btn-dark btn-lg btn-block"> Регистрация </a>
+            <a href="{% url 'login' %}" class="btn btn-dark btn-lg btn-block"> Войти </a>
+            <a href="{% url 'logout' %}" class="btn btn-dark btn-lg btn-block"> Выйти </a>
+            <a href="{% url 'profile' %}" class="btn btn-dark btn-lg btn-block"> Мой профиль </a>
+        </div>
+
     </aside>
     <main>
+        {% if messages %}
+        	{% for message in messages %}
+          	<div class="alert alert-{{ message.tags }}">
+            	{{ message }}
+          	</div>
+        	{% endfor %}
+        {% endif %}
         {% block content %}
         {% endblock %}
     </main>

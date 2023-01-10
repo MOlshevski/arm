@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %} Войти {% endblock %}
+
+{% block content %}
+<h1> Вход </h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit"> Вход </button>
+</form>
+
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Не зарегестрированы? <a class="ml-2" href="{% url 'register' %}">Регистрация</a>
+        </small>
+    </div>
+{% endblock %}

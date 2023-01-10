@@ -1,10 +1,6 @@
 from django.http import HttpResponseNotFound
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 def index(request):
-    return render(request, 'main/index.html')
-
-
-def pageNotFound(request, exception):
-    return HttpResponseNotFound('<h1>Страница не найдена</h1>')
+	return render(request, 'main/index.html')
