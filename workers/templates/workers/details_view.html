@@ -10,7 +10,12 @@
     <h5>Структурное подразделение: {{ worker.division }}</h5>
     <h7>Адресс: {{ worker.adress }}</h7>
     <br>
-    <h7>Дата рождения: {{ worker.bday }}</h7>
+    <h7>Дата рождения: {{ worker.bday }}</h7><br>
+    <h7>Руководитель стажировки: {{ worker.manager }}</h7><br>
+    <h7>Дата начала стажировки: {{ worker.training_start }}</h7><br>
+    <h7>Дата окончания стажировки: {{ worker.training_end }}</h7><br>
+    <h7>Текущая проверка знаний: {{ worker.exam }}</h7><br>
+    <h7>Текущий медосмотр: {{ worker.medical }}</h7><br>
 </div>
 
 {% endblock %}

@@ -28,9 +28,17 @@
                     <a href="{% url 'workers-detail' el.id %}" class="btn btn-info">
                         Перейти к работнику</a>
                     <a href="{% url 'workers-update' el.id %}" class="btn btn-info">
-                        Редактировать информацию</a>
+                        Редактировать </a>
                     <a href="{% url 'workers-delete' el.id %}" class="btn btn-info">
-                        Удалить работника</a>
+                        Удалить </a>
+                    <a href="{% url 'training' el.id %}" class="btn btn-info">
+                        Стажировка</a>
+                    <a href="{% url 'admission' el.id %}" class="btn btn-info">
+                        Допуск</a>
+                    <a href="{% url 'exam' el.id %}" class="btn btn-info">
+                        Проверка знаний</a>
+                    <a href="#" class="btn btn-info">
+                        Направление на медосмотр</a>
                 </div>
             {% endfor %}
         {% else %}

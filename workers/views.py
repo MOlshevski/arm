@@ -28,6 +28,24 @@ class WorkersDeleteView(DeleteView):
     template_name = 'workers/delete_worker.html'
 
 
+class WorkersTrainingView(DeleteView):
+    model = Workers
+    success_url = '/workers/'
+    template_name = 'workers/training.html'
+
+
+class WorkersAdmissionView(DeleteView):
+    model = Workers
+    success_url = '/workers/'
+    template_name = 'workers/admission.html'
+
+
+class WorkersExamView(DeleteView):
+    model = Workers
+    success_url = '/workers/'
+    template_name = 'workers/exam.html'
+
+
 def create_worker(request):
     error = ''
     if request.method == 'POST':
