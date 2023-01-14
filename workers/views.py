@@ -9,6 +9,11 @@ def my_workers(request):
     return render(request, 'workers/workers.html', {'workers': workers})
 
 
+def medical_main(request):
+    workers = Workers.objects.all()
+    return render(request, 'workers/medical_main.html', {'workers': workers})
+
+
 class WorkersDetailView(DetailView):
     model = Workers
     template_name = 'workers/details_view.html'
@@ -63,3 +68,6 @@ def create_worker(request):
         'error': error
     }
     return render(request, 'workers/create_worker.html', data)
+
+
+

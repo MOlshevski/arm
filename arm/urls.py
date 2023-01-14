@@ -15,6 +15,7 @@ urlpatterns = [
     path('plans/', include('plans.urls')),
     path('equipment/', include('equipment.urls')),
     path('workers/', include('workers.urls')),
+    path('sites/', include('building_site.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

@@ -1,0 +1,88 @@
+body {
+    background: white;
+}
+
+aside {
+    float: left;
+    background: #5997c9;
+    width: 20%;
+    padding: 2%;
+    height: 180vh;
+    color: black;
+    border-right: 2px solid #403c3c;
+}
+
+aside ul {list-style:none}
+aside ul li {
+    color: black;
+    display: compact;
+    margin-top: 18px;
+    transition: transform .5s ease;
+}
+aside ul li:hover, aside ul a:hover {
+    color: #181f24;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main .features {
+    float: left;
+    padding: 2%;
+    color: black;
+    margin-top: 5px;
+    text-align: center;
+    width: 80%;
+}
+
+button ul,li {list-style: none}
+button {
+    background-color: #24aad7;
+    color: #000000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 12px;
+    border: 0.1px solid white;
+    margin: 1px;
+}
+
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+button:hover span{
+    padding-right: 25px;
+}
+
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+main .plans {
+    float: left;
+    padding: 0.5%;
+    color: black;
+    margin-top: 10px;
+    text-align: left;
+    width: 80%;
+}
+
+form {
+    display: inline;
+}

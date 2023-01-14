@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Список строительных объектов{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1>Список строительных объектов</h1>
+</div>
+
+<div class="features">
+    <a href="{% url 'create_site' %}">
+        <li>
+            <button>
+                <img src="{% static 'equipment/img/add.png' %}" alt="add" width="30" height="30">
+                <span class="create"> Добавить строительный объект</span>
+            </button>
+        </li>
+    </a>
+</div>
+
+    <div class="plans">
+        {% if sites %}
+            {% for el in sites %}
+                <div class="alert alert-info ">
+                    <h3>{{ el.title }}</h3>
+                    <h5>{{ el.body }}</h5>
+                    <h7>Общее руководство: {{ el.manager_main }}</h7>
+                    <h7>Линейный руководитель: {{ el.manager_line }}</h7>
+                    <br>
+                    <a href="{% url 'sites-detail' el.id %}" class="btn btn-info">
+                        Перейти к информации об объекте</a>
+                    <a href="{% url 'sites-update' el.id %}" class="btn btn-info">
+                        Редактировать информацию об объекте</a>
+                    <a href="{% url 'sites-delete' el.id %}" class="btn btn-info"> Удалить объект</a>
+                    <a href="{% url 'site_destination' el.id %}" class="btn btn-info"> Назначение ответственных</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h3>У вас нет объектов</h3>
+    </div>
+        {% endif %}
+
+{% endblock %}

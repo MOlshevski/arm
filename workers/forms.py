@@ -1,12 +1,13 @@
 from .models import Workers
-from django.forms import ModelForm, TextInput, DateInput, Select
+from django.forms import ModelForm, TextInput, DateInput, Select, FloatField, MultipleChoiceField
 
 
 class WorkersForm(ModelForm):
     class Meta:
         model = Workers
         fields = ['surname', 'firstname', 'midname', 'bday', 'profession', 'division', 'adress', 'manager',
-                  'training_start', 'training_end', 'exam', 'medical']
+                  'training_start', 'training_end', 'exam', 'medical', 'dangerous_factors',
+                  'condition_class', 'frequency']
 
         widgets = {
             'surname': TextInput(attrs={
@@ -25,7 +26,7 @@ class WorkersForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Дата рождения'
             }),
-            'profession': TextInput(attrs={
+            'profession': Select(attrs={
                 'class': 'form-control',
                 'placeholder': 'Профессия'
             }),
@@ -57,4 +58,16 @@ class WorkersForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Дата текущего мед. осмотра'
             }),
-                }
+            'dangerous_factors': Select(attrs={
+                'class': 'form-control',
+                'placeholder': 'Опасные факторы'
+                }),
+            'condition_class': TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Класс условий труда'
+            }),
+            'frequency': Select(attrs={
+                'class': 'form-control',
+                'placeholder': 'Периодичность проведения медицинского осмотра'
+            }),
+        }

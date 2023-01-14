@@ -10,13 +10,20 @@
 
 <div class="features">
     <a href="{% url 'create_worker' %}">
-        <li>
-            <button>
-                <img src="{% static 'workers/img/add.png' %}" alt="add" width="30" height="30">
-                <span class="create"> Добавить работника</span>
-            </button>
-        </li>
+        <button>
+            <img src="{% static 'workers/img/add.png' %}" alt="add" width="30" height="30">
+            <span class="create"> Добавить работника</span>
+        </button>
     </a>
+    <br>
+    <a href="{% url 'medical_main' %}">
+        <button>
+            <img src="{% static 'workers/img/add.png' %}" alt="add" width="30" height="30">
+            <span class="create"> Добавить список работников на медосмотр</span>
+        </button>
+    </a>
+
+
 </div>
     <div class="plans">
         {% if workers %}
@@ -45,6 +52,9 @@
             <h3>У вас нет работников</h3>
     </div>
         {% endif %}
+
+
+
 
 {% endblock %}
 

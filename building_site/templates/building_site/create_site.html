@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Добавить объект{% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <h1>Добавить объект</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p></p>
+        {{ form.title }}
+        <p></p>
+        {{ form.body }}
+        <p></p>
+        {{ form.contract_type }}
+        <p></p>
+        {{ form.contract_number }}
+        <p></p>
+        {{ form.contract_date }}
+        <p></p>
+        {{ form.manager_main }}
+        <p></p>
+        {{ form.manager_line }}
+        <p></p>
+        <span>{{ error }}</span>
+        <button class="btn btn-info" type="submit">Добавить объект</button>
+    </form>
+</div>
+
+{% endblock %}

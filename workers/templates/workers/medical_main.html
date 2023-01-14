@@ -1,0 +1,103 @@
+<title>Список на медосмотр</title>
+
+{% if workers %}
+
+	<p><strong>СПИСОК работников, подлежащих обязательным периодическим медицинским осмотрам </strong></p>
+	<p><strong>ОАО &laquo;Белреставрация&raquo;</strong></p>
+	<p>&nbsp;</p>
+		<table border="1" cellpadding="0" cellspacing="0">
+			<tbody>
+				<tr>
+					<td style="width:37px">
+						<p>№ п/п</p>
+					</td>
+					<td style="width:152px">
+						<p>Фамилия, собственное имя, отчество</p>
+					</td>
+					<td style="width:95px">
+						<p>Число, месяц, год рождения</p>
+					</td>
+					<td style="width:161px">
+						<p>Адрес места жительства</p>
+					</td>
+					<td style="width:131px">
+						<p>Профессия (должность)</p>
+					</td>
+					<td style="width:218px">
+						<p>Вредные и (или) опасные производственные факторы, класс опасности химического вещества</p>
+					</td>
+					<td style="width:57px">
+						<p>Класс усл. труда</p>
+					</td>
+					<td style="width:123px">
+						<p>Периодичность проведения периодического медосмотра</p>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:37px">
+						<p>&nbsp;&nbsp;1</p>
+					</td>
+					<td style="width:152px">
+						<p>&nbsp;&nbsp;2</p>
+					</td>
+					<td style="width:95px">
+						<p>&nbsp;&nbsp;3</p>
+					</td>
+					<td style="width:161px">
+						<p>&nbsp;&nbsp;4</p>
+					</td>
+					<td style="width:131px">
+						<p>&nbsp;&nbsp;5</p>
+					</td>
+					<td style="width:218px">
+						<p>&nbsp;&nbsp;6</p>
+					</td>
+					<td style="width:57px">
+						<p>&nbsp;&nbsp;7</p>
+					</td>
+					<td style="width:123px">
+						<p>&nbsp;&nbsp;8</p>
+					</td>
+				</tr>
+				<tr>
+	{% for el in workers %}
+					<td style="width:37px">
+						<p>{{ el.id }}</p>
+					</td>
+					<td style="width:152px">
+						<p>{{ el.surname }} {{ el.firstname }} {{ el.midname }}</p>
+					</td>
+					<td style="width:95px">
+						<p>{{ el.bday }}</p>
+					</td>
+					<td style="width:161px">
+						<p>{{ el.adress }}</p>
+					</td>
+					<td style="width:131px">
+						<p>{{ el.profession }}</p>
+					</td>
+					<td style="width:218px">
+						<p>{{ el.dangerous_factors }}</p>
+					</td>
+					<td style="width:57px">
+						<p>{{ el.condition_class }}</p>
+					</td>
+					<td style="width:123px">
+						<p>{{ el.frequency }}</p>
+					</td>
+					</tr>
+	{% endfor %}
+			</tbody>
+		</table>
+
+
+<p>&nbsp;</p>
+
+<p>Генеральный директор&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; В.Л.Змушко</p>
+
+{% else %}
+	<h3>У вас нет работников для прохождения медицинского осмотра</h3>
+{% endif %}
+
+
+
