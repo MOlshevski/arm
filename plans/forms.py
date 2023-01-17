@@ -19,5 +19,5 @@ class PlansForm(ModelForm):
             'time': TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Дедлайн'
-        })
+            })
                 }

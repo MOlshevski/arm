@@ -36,6 +36,7 @@ class Sites(models.Model):
     title = models.CharField('Строительный объект', max_length=100)
     body = models.TextField('Наименование объекта')
     contract_type = models.CharField('Работы ведутся по:', max_length=100, choices=CONTRACT_TYPE_CHOICES)
+    # To use it easy in template site_destination.html by Jinja2 ({{ sites.contract_type }})
     contract_number = models.CharField('Номер договора', max_length=50)
     contract_date = models.DateField('Дата составления договора')
     manager_main = models.CharField('Общее руководство', max_length=100, choices=MAIN_MANAGER_CHOICES)

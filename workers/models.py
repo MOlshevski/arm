@@ -49,6 +49,7 @@ class Workers(models.Model):
     midname = models.CharField('Отчество', max_length=30)
     bday = models.CharField('Дата рождения', max_length=30, null=True, blank=True)
     profession = models.ForeignKey('Professions', on_delete=models.PROTECT, null=True)
+    # I use ForeignKey here to link to the Professions model and make Select mode in forms.py
     division = models.CharField('Структурное подразделение', max_length=50, choices=DIVISION_CHOICES, default='Администрация')
     adress = models.CharField('Адрес', max_length=150, null=True, blank=True)
     manager = models.CharField('Руководитель стажировки', max_length=150, choices=CHOICES, default="Не было")
@@ -73,11 +74,15 @@ class Workers(models.Model):
         verbose_name_plural = 'Workers'
 
 
+"""Model Professions will be displayed only in the admin panel. Made for easy choice of profession in the form of 
+worker creation"""
+
+
 class Professions(models.Model):
     profession = models.CharField('Профессия', max_length=50)
 
     def __str__(self):
-        return self.profession
+        return self.profession  # To display a profession not as an object, but by title
 
     class Meta:
         verbose_name = 'Profession'
